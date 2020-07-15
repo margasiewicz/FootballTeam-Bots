@@ -58,16 +58,58 @@ other_btns = {
 
 
 class FT_training_bot:
-    def pick_training(self):
-        print("Welcone to training bot. Pick parameters and log in to your account after\
-        browser opens\n\n")
+    def __init__(self):
+        print("Witaj! Wybierz parametry, a po otwarciu okna przeglądarki zaloguj się na swoje konto\n\n")
 
-        print("Do you wish to train specialization or basic skill?")
-        print("1 - spacialization\n2 - basic skill")
+
+    def pick_training(self):   
+        print("Chcesz trenować specjalizację czy zwykłe umiejętności?")
+        print("1 - specjalizacja\n2 - zwykła umiejętność")
         training_choice = int(input())
+        if training_choice not in [1,2]:
+            print ('Wybierz poprawną opcję')
+            return self.pick_training()
+        else:
+            return training_choice
+
+    def choose_parameters(self, spec_or_skill_choice):
+        print('Ile chcesz zrobić treningów?')
+        energy = int(input())
+        print('Wpisz czas trwania jednego treningu w sekundach')
+        delay = int(input())
+        
+        
+        if spec_or_skill_choice == 1:
+            # 1 for specialization
+            # 2 for basic skill
+            print("wybierz specjalizację do trenowania i naciśnij enter:")
+            print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
+            skill = int(input())
+            print("Wybierz który skill ze specjalizacji chcesz trenować i naciśniej enter:")
+            print("1 - pierwszy\n2 - drugi\n3 - trzeci\n4 - czwarty")
+            print("Wybierz PIERWSZY skill:")
+            skill1 = int(input())
+            print("Wybierz DRUGI skill:")
+            skill2 = int(input())
+        else:
+            pass
+
+        print("wybierz umiejętność do trenowania i naciśnij enter:")
+        print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\
+        \n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
+        skill = int(input())
+        print("Wybierz który skill ze specjalizacji chcesz trenować i naciśniej enter:")
+        print("1 - pierwszy\n2 - drugi\n3 - trzeci\n4 - czwarty")
+        print("Wybierz PIERWSZY skill:")
+        skill1 = int(input())
+        print("Wybierz DRUGI skill:")
+        skill2 = int(input())
+
 
 
 
 
 if __name__ == '__main__':
     bot = FT_training_bot()
+    training_choice = bot.pick_training()
+    print('Wybrano:', training_choice)
