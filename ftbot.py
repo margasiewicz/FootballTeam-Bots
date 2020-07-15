@@ -55,3 +55,19 @@ other_btns = {
     "put_pass": '//*[@id="login-form"]/div[2]/input',
     "login_btn": '//*[@id="btn-login"]'
 }
+
+
+class FT_training_bot:
+    def pick_training(self):
+        print("Welcone to training bot. Pick parameters and log in to your account after\
+        browser opens\n\n")
+
+        print("Do you wish to train specialization or basic skill?")
+        print("1 - spacialization\n2 - basic skill")
+        training_choice = int(input())
+
+
+
+
+if __name__ == '__main__':
+    bot = FT_training_bot()
