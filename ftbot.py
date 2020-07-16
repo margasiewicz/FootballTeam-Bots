@@ -61,7 +61,6 @@ class FT_training_bot:
     def __init__(self):
         print("Witaj! Wybierz parametry, a po otwarciu okna przeglądarki zaloguj się na swoje konto\n\n")
 
-
     def pick_training(self):   
         print("Chcesz trenować specjalizację czy zwykłe umiejętności?")
         print("1 - specjalizacja\n2 - zwykła umiejętność")
@@ -84,7 +83,7 @@ class FT_training_bot:
             # 2 for basic skill
             print("wybierz specjalizację do trenowania i naciśnij enter:")
             print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
-            skill = int(input())
+            spec = int(input())
             print("Wybierz który skill ze specjalizacji chcesz trenować i naciśniej enter:")
             print("1 - pierwszy\n2 - drugi\n3 - trzeci\n4 - czwarty")
             print("Wybierz PIERWSZY skill:")
@@ -92,19 +91,29 @@ class FT_training_bot:
             print("Wybierz DRUGI skill:")
             skill2 = int(input())
         else:
-            pass
+            print("\nWybierz umiejętność do trenowania i naciśnij enter")
+            print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
+            print("Wybierz PIERWSZĄ umiejętność:")
+            skill1 = int(input())
+            print("Wybierz DRUGĄ umiejętność:")
+            skill2 = int(input())
+            hover1 = list(skill_hover.items())[skill1-1][0]
+            button1 = list(skill_btns.items())[skill1-1][0]
+            hover2 = list(skill_hover.items())[skill2-1][0]
+            button2 = list(skill_btns.items())[skill2-1][0]
 
-        print("wybierz umiejętność do trenowania i naciśnij enter:")
-        print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\
-        \n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
-        skill = int(input())
-        print("Wybierz który skill ze specjalizacji chcesz trenować i naciśniej enter:")
-        print("1 - pierwszy\n2 - drugi\n3 - trzeci\n4 - czwarty")
-        print("Wybierz PIERWSZY skill:")
-        skill1 = int(input())
-        print("Wybierz DRUGI skill:")
-        skill2 = int(input())
-
+            if (skill1 == skill2):
+                ile_energii = ile_energii*2
+        parameters = {
+            'energy': energy,
+            'delay': delay,
+            'hover1': hover1,
+            'button1': button1,
+            'hover2': hover2,
+            'button2': button2
+        }
+        return parameters
+        
 
 
 
@@ -112,4 +121,3 @@ class FT_training_bot:
 if __name__ == '__main__':
     bot = FT_training_bot()
     training_choice = bot.pick_training()
-    print('Wybrano:', training_choice)
