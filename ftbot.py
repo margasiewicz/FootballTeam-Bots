@@ -59,9 +59,11 @@ other_btns = {
 
 class FT_training_bot:
     def __init__(self):
+        
         print("Witaj! Wybierz parametry, a po otwarciu okna przeglądarki zaloguj się na swoje konto\n\n")
 
-    def pick_training(self):   
+    def pick_training(self): 
+
         print("Chcesz trenować specjalizację czy zwykłe umiejętności?")
         print("1 - specjalizacja\n2 - zwykła umiejętność")
         training_choice = int(input())
@@ -72,11 +74,11 @@ class FT_training_bot:
             return training_choice
 
     def choose_parameters(self, spec_or_skill_choice):
+
         print('Ile chcesz zrobić treningów?')
         energy = int(input())
         print('Wpisz czas trwania jednego treningu w sekundach')
         delay = int(input())
-        
         
         if spec_or_skill_choice == 1:
             # 1 for specialization
@@ -90,6 +92,7 @@ class FT_training_bot:
             skill1 = int(input())
             print("Wybierz DRUGI skill:")
             skill2 = int(input())
+            spec_url = list(sp_urls.items())[skill-1][1]        
         else:
             print("\nWybierz umiejętność do trenowania i naciśnij enter")
             print("1 - ofensywa\n2 - defensywa\n3 - rozgrywanie\n4 - kondycja\n5 - czytanie gry\n6 - pressing\n7 - stałe fragmenty\n8 - skuteczność")
@@ -97,16 +100,19 @@ class FT_training_bot:
             skill1 = int(input())
             print("Wybierz DRUGĄ umiejętność:")
             skill2 = int(input())
-            hover1 = list(skill_hover.items())[skill1-1][0]
-            button1 = list(skill_btns.items())[skill1-1][0]
-            hover2 = list(skill_hover.items())[skill2-1][0]
-            button2 = list(skill_btns.items())[skill2-1][0]
+            hover1 = list(skill_hover.items())[skill1-1][1]
+            button1 = list(skill_btns.items())[skill1-1][1]
+            hover2 = list(skill_hover.items())[skill2-1][1]
+            button2 = list(skill_btns.items())[skill2-1][1]
+            spec_url = 'https://game.footballteam.pl/training'
 
             if (skill1 == skill2):
-                ile_energii = ile_energii*2
+                energy = energy*2
+
         parameters = {
             'energy': energy,
             'delay': delay,
+            'spec_url': spec_url,
             'hover1': hover1,
             'button1': button1,
             'hover2': hover2,
@@ -114,10 +120,45 @@ class FT_training_bot:
         }
         return parameters
         
+    def training(self, parameters):
+        options = webdriver.ChromeOptions()
+        #options.add_argument('--headless')
+        options.add_argument("--mute-audio")
+        options.add_argument('--ignore-certificate-errors-spki-list')
+        options.add_argument('--ignore-ssl-errors')
+        options.add_argument("--start-maximized")
+        self.driver = webdriver.Chrome(options=options)
+        self.driver.get("https://game.footballteam.pl/")
+        sleep(30)
 
-
-
+        self.driver.get(parameters.get('spec_url'))
+        sleep(5)
+        hover1 = self.driver.find_element_by_xpath(parameters.get('hover1'))
+        hover2 = self.driver.find_element_by_xpath(parameters.get('hover2'))
+        for x in range(parameters.get('energy')//2):
+            for y in range(2):
+                ActionChains(self.driver).move_to_element(hover1).perform()
+                sleep(2)
+                try:
+                    self.driver.find_element_by_xpath(parameters.get('button1')).click()
+                except:
+                    pass
+                ActionChains(self.driver).move_to_element(hover2).perform()
+                sleep(2)
+                try:
+                    self.driver.find_element_by_xpath(parameters.get('button2')).click()
+                except:
+                    pass
+            if(x%20==0 and x!=0):
+                print("Spalilem okolo "+str(2*x)+" energii")
+            sleep(parameters.get('delay'))
+        
+        self.driver.quit()
 
 if __name__ == '__main__':
     bot = FT_training_bot()
     training_choice = bot.pick_training()
+    parameters = bot.choose_parameters(training_choice)
+    bot.training(parameters)
+
+    
