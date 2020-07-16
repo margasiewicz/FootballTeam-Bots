@@ -1,2 +1,4 @@
 proj_env/
 .vscode/
+__pycache__/
+debug.log
