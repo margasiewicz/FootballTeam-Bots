@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
 import random
+from urls import work_hover, work_click, work_sleep_time
 
 class FT_training_bot:
     def __init__(self):
@@ -17,8 +18,8 @@ class FT_training_bot:
         return choice
 
     def work(self):
-        choice = pick_parameters()
-        
+        choice = self.pick_parameters()
+
         options = webdriver.ChromeOptions()
         #options.add_argument('--headless')
         options.add_argument("--mute-audio")
@@ -33,10 +34,14 @@ class FT_training_bot:
             driver.get('https://game.footballteam.pl/work/')
             sleep(5)
             try:
-                hover = driver.find_element_by_xpath(hover_element.get(choice))
+                hover = driver.find_element_by_xpath(work_hover.get(choice))
                 ActionChains(driver).move_to_element(hover).perform()
                 sleep(random.randint(2,5))
-                driver.find_element_by_xpath(click_element.get(choice)).click()
-                sleep(sleep_time.get(choice))
+                driver.find_element_by_xpath(work_click.get(choice)).click()
+                sleep(work_sleep_time.get(choice))
             except:
                 sleep(3)
+
+if __name__ == '__main__':
+    bot = FT_training_bot()
+    bot.work()
