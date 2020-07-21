@@ -81,3 +81,27 @@ work_sleep_time={
     8:7200,
     9:21600
 }
+food_hover = {
+    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
+    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
+    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
+    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
+    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
+    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+}
+food_click = {
+    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
+    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
+    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
+    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
+    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
+    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+}
+food_sleep_time = {
+    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
+    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
+    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
+    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
+    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
+    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+}
