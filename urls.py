@@ -48,3 +48,36 @@ other_btns = {
     "put_pass": '//*[@id="login-form"]/div[2]/input',
     "login_btn": '//*[@id="btn-login"]'
 }
+work_hover = {
+    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
+    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
+    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
+    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
+    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
+    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+    7:'//*[@id="container"]/div/div/div/div[7]/div[2]',
+    8:'//*[@id="container"]/div/div/div/div[8]/div[2]',
+    9:'//*[@id="container"]/div/div/div/div[9]/div[2]'
+}
+work_click={
+    1:'//*[@id="container"]/div/div/div/div[1]/div[2]/div[3]/button',
+    2:'//*[@id="container"]/div/div/div/div[2]/div[2]/div[3]/button',
+    3:'//*[@id="container"]/div/div/div/div[3]/div[2]/div[3]/button',
+    4:'//*[@id="container"]/div/div/div/div[4]/div[2]/div[3]/button',
+    5:'//*[@id="container"]/div/div/div/div[5]/div[2]/div[3]/button',
+    6:'//*[@id="container"]/div/div/div/div[6]/div[2]/div[3]/button',
+    7:'//*[@id="container"]/div/div/div/div[7]/div[2]/div[3]/button',
+    8:'//*[@id="container"]/div/div/div/div[8]/div[2]/div[3]/button',
+    9:'//*[@id="container"]/div/div/div/div[9]/div[2]/div[3]/button'
+}
+work_sleep_time={
+    1:30,
+    2:150,
+    3:360,
+    4:300,
+    5:1800,
+    6:5400,
+    7:600,
+    8:7200,
+    9:21600
+}
