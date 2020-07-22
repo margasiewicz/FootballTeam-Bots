@@ -3,7 +3,7 @@ from time import sleep
 from selenium.webdriver.chrome.options import Options
 from urls import market_btns
 
-class FTBot:
+class FT_market_bot:
     def __init__(self):
         print("Witaj! Wybierz parametry, a po otwarciu okna przeglądarki zaloguj się na swoje konto\n\n")
 
@@ -87,4 +87,9 @@ class FTBot:
                             
                 except:
                         self.refresh()
-            
+
+
+if __name__ == '__main__':
+    bot = FT_market_bot()
+    parameters = bot.pick_parameters()
+    bot.market_start(parameters)

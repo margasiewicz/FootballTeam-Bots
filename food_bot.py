@@ -41,5 +41,5 @@ class FT_food_bot():
             except:
                 sleep(3)
             
-
-hover_and_click(hover, click)
+if __name__ == '__main__':
+    hover_and_click(hover, click)
