@@ -82,30 +82,29 @@ work_sleep_time={
     9:21600
 }
 food_hover = {
-    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
-    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
-    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
-    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
-    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
-    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+    1:'//*[@id="container"]/div/div/div[1]/div[1]/div[2]',
+    2:'//*[@id="container"]/div/div/div[1]/div[2]/div[2]',
+    3:'//*[@id="container"]/div/div/div[1]/div[3]/div[2]',
+    4:'//*[@id="container"]/div/div/div[1]/div[4]/div[2]',
+    5:'//*[@id="container"]/div/div/div[1]/div[5]/div[2]',
+    6:'//*[@id="container"]/div/div/div[1]/div[6]/div[2]',
 }
 food_click = {
-    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
-    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
-    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
-    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
-    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
-    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+    1:'//*[@id="container"]/div/div/div[1]/div[1]/div[2]/div[3]/button',
+    2:'//*[@id="container"]/div/div/div[1]/div[2]/div[2]/div[3]/button',
+    3:'//*[@id="container"]/div/div/div[1]/div[3]/div[2]/div[3]/button',
+    4:'//*[@id="container"]/div/div/div[1]/div[4]/div[2]/div[3]/button',
+    5:'//*[@id="container"]/div/div/div[1]/div[5]/div[2]/div[3]/button',
+    6:'//*[@id="container"]/div/div/div[1]/div[6]/div[2]/div[3]/button',
 }
 food_sleep_time = {
-    1:'//*[@id="container"]/div/div/div/div[1]/div[2]',
-    2:'//*[@id="container"]/div/div/div/div[2]/div[2]',
-    3:'//*[@id="container"]/div/div/div/div[3]/div[2]',
-    4:'//*[@id="container"]/div/div/div/div[4]/div[2]',
-    5:'//*[@id="container"]/div/div/div/div[5]/div[2]',
-    6:'//*[@id="container"]/div/div/div/div[6]/div[2]',
+    1:360,
+    2:1800,
+    3:7200,
+    4:14400,
+    5:21600,
+    6:43200,
 }
-
 market_btns = {
     'toggle_item_color':'//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/img',
     'gold':'//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div[2]/div[3]/div',
