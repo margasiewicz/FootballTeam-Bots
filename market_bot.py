@@ -1,10 +1,12 @@
-
+from selenium import webdriver
+from time import sleep
+from selenium.webdriver.chrome.options import Options
+from urls import market_btns
 
 class FTBot:
     def __init__(self):
         print("Witaj! Wybierz parametry, a po otwarciu okna przeglądarki zaloguj się na swoje konto\n\n")
 
-    
     def refreshtoggle(self, color):
         sleep(2)
         self.driver.get("https://game.footballteam.pl/market")
@@ -26,7 +28,9 @@ class FTBot:
         print("1 - złote\n2 - czerwone\n3 - zielone")
         print("4 - niebieskie\n5 - szare\n6 - jakikolwiek")
 
-        'TODO: make following more readable'
+        '''
+        TODO: make following more readable
+        '''
         color = int(input())
         colors = ['gold', 'red', 'green', 'blue', 'grey', 'any']
         color = colors[color-1]
@@ -42,15 +46,3 @@ class FTBot:
             'qty':qty
         }
         return parameters
-        
-    def market_start(self):
-        options = webdriver.ChromeOptions()
-        #options.add_argument('--headless')
-        options.add_argument("--mute-audio")
-        options.add_argument('--ignore-certificate-errors-spki-list')
-        options.add_argument('--ignore-ssl-errors')
-        options.add_argument("--start-maximized")
-        self.driver = webdriver.Chrome(options=options)
-        self.driver.get("https://game.footballteam.pl/")
-        sleep(30)
-        
