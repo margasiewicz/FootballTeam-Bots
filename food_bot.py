@@ -3,12 +3,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
 import random
+from urls import food_hover, food_click, food_sleep_time
 
 class FT_food_bot():
     def __init__(self):
         print('Po wybraniu posiłku otworzy się przeglądarka, zaloguj się na FT (masz na to 30s) i pozostaw ją włączoną')
 
-    def pick_parameters(self):
+    def choose_food(self):
         print('Wpisz numer posiłku i naciśnij Enter')
         print('1 - SMOOTHIE\n2 - BUŁKA\n3 - SCHABOWY')
         print('4 - SHAKE\n5 - KURCZAK Z RYŻEM\n6 - BIESIADA')
@@ -16,7 +17,7 @@ class FT_food_bot():
         return choice
 
     def eat(self):
-        choice = self.pick_parameters()
+        choice = self.choose_food()
         options = webdriver.ChromeOptions()
         #options.add_argument('--headless')
         options.add_argument("--mute-audio")
@@ -26,9 +27,7 @@ class FT_food_bot():
         driver = webdriver.Chrome(options=options)
         driver.get('https://game.footballteam.pl/food')
         sleep(30)
-        driver.get('https://game.footballteam.pl/food')
-        sleep(2)
-        #driver = webdriver.Chrome()
+        
         while True:
             driver.get('https://game.footballteam.pl/food')
             sleep(5)
@@ -42,4 +41,5 @@ class FT_food_bot():
                 sleep(3)
             
 if __name__ == '__main__':
-    hover_and_click(hover, click)
+    bot = FT_food_bot()
+    bot.eat()
