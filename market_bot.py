@@ -11,12 +11,13 @@ class FTBot:
         sleep(2)
         self.driver.get("https://game.footballteam.pl/market")
         sleep(3)
+        #find given color category and click it
         self.driver.find_element_by_xpath\
-                (market.get("toggle_item_color"))\
+                (market_btns.get("toggle_item_color"))\
                 .click()
         sleep(2)
         self.driver.find_element_by_xpath\
-            (rynek.get(color))\
+            (market_btns.get(color))\
             .click() 
         sleep(3)
     def refresh(self):
@@ -46,3 +47,44 @@ class FTBot:
             'qty':qty
         }
         return parameters
+
+    def market_start(self, parameters):
+            color = parameters.get('color')
+            price = parameters.get('price')
+            qty = parameters.get('qty')
+
+            options = webdriver.ChromeOptions()
+            #options.add_argument('--headless')
+            options.add_argument("--mute-audio")
+            options.add_argument('--ignore-certificate-errors-spki-list')
+            options.add_argument('--ignore-ssl-errors')
+            options.add_argument("--start-maximized")
+            self.driver = webdriver.Chrome(options=options)
+            self.driver.get("https://game.footballteam.pl/")
+            sleep(30)
+            self.refreshtoggle(color)
+
+
+            while qty>0:
+                try:      
+                    #sort min to max price
+                    self.driver.find_element_by_xpath\
+                        (market_btns.get('min-max')).click()
+                    sleep(1)
+                    #find min price and compare it to given min price
+                    min_price = self.driver.find_element_by_xpath\
+                        (market_btns.get('first_item')).text
+                    min_price = int(min_price)
+                    if min_price<=price:
+                        print('próbuję kupić po cenie', min_price)
+                        self.driver.find_element_by_xpath\
+                        (market_btns.get("buy"))\
+                        .click()
+                        self.driver.find_element_by_xpath\
+                        (market_btns.get("confirm"))\
+                        .click()
+                        qty-=1
+                            
+                except:
+                        self.refresh()
+            

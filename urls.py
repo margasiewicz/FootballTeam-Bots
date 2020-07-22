@@ -107,7 +107,7 @@ food_sleep_time = {
 }
 
 market_btns = {
-    'toggle item color':'//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/img',
+    'toggle_item_color':'//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/img',
     'gold':'//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div[2]/div[3]/div',
     'red': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div[2]/div[4]',
     'green': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div[2]/div[5]/div',
@@ -116,8 +116,7 @@ market_btns = {
     'any': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div[2]/div[1]/div',
     'min-max': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[1]/div[4]/i[2]',
     'max-min': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[1]/div[4]/i[1]',
-    'minn': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[2]/div[4]/b',
-    'min2': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[3]/div[4]/b',
+    'first_item': '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[2]/div[4]/b',
     "buy": '//*[@id="container"]/div/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div[2]/div[5]/button',
-    "commit": '//*[@id="container"]/div/div[2]/div[1]/div/div/div[3]/button[2]'
+    "confirm": '//*[@id="container"]/div/div[2]/div[1]/div/div/div[3]/button[2]'
 }
