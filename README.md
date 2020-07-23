@@ -1,6 +1,6 @@
 # FootballTeam automation bots
 
-> This is a ReadMe template to help save you time and effort.
+> 
 
 ---
 
@@ -22,26 +22,37 @@ These bots help to automate everyday tasks for [Football Team](https://footballt
 - Python
 - Selenium
 
-
 ---
 
 ## How To Use
 
 #### Installation
-```
+Clone repository and make sure that local master is up-to-date:
+```bash
 git clone https://github.com/margasiewicz/FootballTeam-Bots.git
-```
-```
 git pull origin master
 ```
+Create directory, navigate to it and create virtual environment
+```bash
+mkdir project_dir_name
+cd project_dir_name
+python3 -m venv venv_name
 ```
-virtualenv .venv
-venv/bin/activate
-pip3 install -r requirements.txt
+#### Activating virtual environment
+###### Windows
+```bash
+venv_name\Scripts\activate.bat
+pip install -r requirements.txt
+```
+###### Linux
+```bash
+source venv_name/bin/activate
+pip install -r requirements
 ```
 
 ## References
-
+-[Aaron Jack](https://www.youtube.com/c/AaronJack)
+-[Corey Shafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)
 
 ---
 
@@ -75,7 +86,4 @@ SOFTWARE.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
-
-[Back To The Top](#read-me-template)
+- LinkedIn - [Marcin Gasiewicz](https://www.linkedin.com/in/margasiewicz)
