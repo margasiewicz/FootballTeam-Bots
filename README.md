@@ -51,8 +51,8 @@ pip install -r requirements
 ```
 
 ## References
--[Aaron Jack](https://www.youtube.com/c/AaronJack)
--[Corey Shafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)
+- [Aaron Jack](https://www.youtube.com/c/AaronJack)
+- [Corey Shafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)
 
 ---
 
